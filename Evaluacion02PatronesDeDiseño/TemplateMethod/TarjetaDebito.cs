@@ -10,7 +10,7 @@ namespace Evaluacion02PatronesDeDiseño.TemplateMethod
     {
         protected Cuenta cuentaAsociada;
 
-        public TarjetaDebito(int saldoInicial)
+        public TarjetaDebito(int saldoInicial) : base()
         {
             cuentaAsociada = new Cuenta();
             cuentaAsociada.saldo = saldoInicial;

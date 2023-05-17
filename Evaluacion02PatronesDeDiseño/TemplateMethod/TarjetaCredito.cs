@@ -3,39 +3,35 @@ namespace Evaluacion02PatronesDeDiseño.TemplateMethod
 {
     class TarjetaCredito : TarjetaPago
     {
-        protected int limite;
-        protected int encurso;
+        protected int cupo;
+        protected int deuda;
 
-        public TarjetaCredito(int saldoInicial, int limite)
+        public TarjetaCredito(int deuda, int limite) : base()
         {
-            this.limite = limite;
-            this.encurso = saldoInicial;
+            this.cupo = limite;
+            this.deuda = deuda;
         }
 
         public override bool autorizaPago(int importe)
         {
-            return encurso + importe <= limite;
+            return deuda + importe <= cupo;
         }
 
         protected override void descontarSaldo(int importe)
         {
-            encurso -= importe;
+            deuda += importe;
         }
 
         public override string ToString()
         {
-            return $"[CREDITO] SALDO: ${encurso} | LIMITE: ${limite}";
+            return $"[CREDITO] SALDO: ${deuda} | LIMITE: ${cupo}";
         }
 
-        public override void elegirCuotas(int nCuotas)
+        public override void elegirCuotas(int cuotas)
         {
-            if(nCuotas > 0)
+            if(cuotas > 0)
             {
-                this.cuotas = nCuotas;
-            }
-            else
-            {
-                this.cuotas = 1;
+                this.cuotas = cuotas;
             }
         }
     }

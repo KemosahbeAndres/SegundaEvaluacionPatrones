@@ -10,16 +10,23 @@ namespace Evaluacion02PatronesDeDiseño.Default
     {
         protected int cupo;
         protected int deuda;
+        protected int cuotas;
 
         public TarjetaCredito(int limite, int deuda)
         {
             this.cupo = limite;
             this.deuda = deuda;
+            this.cuotas = 1;
         }
 
         public void pagaCompra(int importe)
         {
-            deuda += importe;
+            deuda += importe / cuotas;
+        }
+
+        public void elegirCuotas(int cuotas)
+        {
+            this.cuotas = cuotas;
         }
 
         public bool autorizaPago(int importe)

@@ -9,6 +9,12 @@ namespace Evaluacion02PatronesDeDiseño.TemplateMethod
     abstract class TarjetaPago
     {
         protected int cuotas;
+
+        public TarjetaPago()
+        {
+            this.cuotas = 1;
+        }
+
         public bool pagaCompra(int importe)
         {
             if (autorizaPago(importe))
@@ -21,7 +27,7 @@ namespace Evaluacion02PatronesDeDiseño.TemplateMethod
 
         public abstract bool autorizaPago(int importe);
 
-        public abstract void elegirCuotas(int nCuotas);
+        public abstract void elegirCuotas(int cuotas);
 
         protected abstract void descontarSaldo(int importe);
     }
