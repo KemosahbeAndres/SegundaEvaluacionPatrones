@@ -1,4 +1,4 @@
-﻿namespace Evaluacion02PatronesDeDiseño
+﻿namespace Evaluacion02PatronesDeDiseño.Default
 {
     class Cuenta
     {

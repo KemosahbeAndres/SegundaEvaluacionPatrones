@@ -30,5 +30,10 @@ namespace Evaluacion02PatronesDeDiseño.TemplateMethod
         {
             return $"[DEBITO] SALDO: ${cuentaAsociada.saldo}";
         }
+
+        public override void elegirCuotas(int nCuotas)
+        {
+            this.cuotas = 1;
+        }
     }
 }

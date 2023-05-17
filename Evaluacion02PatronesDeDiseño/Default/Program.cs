@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Evaluacion02PatronesDeDiseño
+namespace Evaluacion02PatronesDeDiseño.Default
 {
     class Program
     {
@@ -10,7 +10,7 @@ namespace Evaluacion02PatronesDeDiseño
             TarjetaCredito credito = new TarjetaCredito(20000, 10000);
 
             int precio1 = 4000;
-            int precio2 = 25000;
+            int precio2 = 10000;
 
             Console.WriteLine("##### COMPRA DEBITO #####");
             Console.WriteLine(debito);
@@ -35,7 +35,7 @@ namespace Evaluacion02PatronesDeDiseño
             }
             else
             {
-                Console.WriteLine("## Saldo insuficiente! ##");
+                Console.WriteLine("## Cupo excedido! ##");
             }
             Console.WriteLine(credito);
             Console.WriteLine("##### COMPRA CREDITO #####");

@@ -26,5 +26,17 @@ namespace Evaluacion02PatronesDeDiseño.TemplateMethod
         {
             return $"[CREDITO] SALDO: ${encurso} | LIMITE: ${limite}";
         }
+
+        public override void elegirCuotas(int nCuotas)
+        {
+            if(nCuotas > 0)
+            {
+                this.cuotas = nCuotas;
+            }
+            else
+            {
+                this.cuotas = 1;
+            }
+        }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Evaluacion02PatronesDeDiseño
+namespace Evaluacion02PatronesDeDiseño.Default
 {
-    class TarjetaDebito: TarjetaPago
+    class TarjetaDebito
     {
         protected Cuenta cuentaAsociada;
 
@@ -16,12 +16,12 @@ namespace Evaluacion02PatronesDeDiseño
             cuentaAsociada.saldo = saldo;
         }
 
-        public override void pagaCompra(int importe)
+        public void pagaCompra(int importe)
         {
             cuentaAsociada.saldo -= importe;
         }
 
-        public override bool autorizaPago(int importe)
+        public bool autorizaPago(int importe)
         {
             return cuentaAsociada.saldo >= importe;
         }
